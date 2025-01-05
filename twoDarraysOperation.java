@@ -1,27 +1,26 @@
 import java.util.Scanner;
-public class arrays2 {
-    public static void main(String[] args){
-        int a, b ;
+
+public class twoDarraysOperation {
+    public static void main( String[] args){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Number of Rows");
+        int a, b;
+        System.out.println("Enter the Size of rows");
         a = sc.nextInt();
-        System.out.println("Enter the Number of Columns");
+        System.out.println("Enter the size Column");
         b = sc.nextInt();
         int arr[][] = new int[a][b];
+        System.out.println("Print the Values");
         for(int i = 0; i < a; i++){
             for(int j = 0; j < b; j++){
                 arr[i][j] = sc.nextInt();
             }
         }
 
-        // Print arrays
-
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
+        for(int i = 0; i<a; i++){
+            for(int j = 0; j < b; j++){
                 System.out.print(arr[i][j] + " ");
             }
-            System.out.println();
+            System.err.println();
         }
-
-    }
+    }    
 }
