@@ -71,6 +71,8 @@ public class practice {
         } while (n == 1);
 
     }
+
+    
     // add-elemnt on the First position
     public static void main(String[] args){
         practice ll = new practice();
