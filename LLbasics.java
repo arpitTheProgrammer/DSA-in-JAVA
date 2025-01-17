@@ -7,15 +7,36 @@ public class LLbasics {
         }
     }
     
-        // Print Recursively
 
-        public static void displayNode(Node head){
-            Node temp = head;
-            while(temp != null){
-                System.out.print(temp.data + " ");
-                temp = temp.next;
-            }
+        // Print Recursively
+        // public static void displayNode(Node head, int count){
+        //     if(head == null ){
+        //         return;
+        //     }
+        //     System.out.print(head.data+ " ");
+        //     System.out.println(count); // Counting the Linked Elements
+        //     displayNode(head.next, count+1);
+        // }
+
+
+        public static int countList(Node head){
+            int count = 0;
+             while(head != null){
+                count++;
+                head = head.next;
+             }
+             return count;
         }
+
+
+
+        // public static void displayNode(Node head){
+        //     Node temp = head;
+        //     while(temp != null){
+        //         System.out.print(temp.data + " ");
+        //         temp = temp.next;
+        //     }
+        // }
     public static void main(String[] args) {
         Node a = new Node(34);
         Node b = new Node(21);
@@ -51,15 +72,17 @@ public class LLbasics {
 
 
         // Print in While loops
+        // int count = 0; 
         // while(temp != null){
-        //     System.out.print(temp.data + " ");
+        //     count++;
+        //     // System.out.print(temp.data + " ");
         //     temp = temp.next;
         // }
+        // System.out.println(count);
 
 
-        displayNode(a);
-        // System.out.println(a.data);
-        // System.out.println(a.next.data); 
+        // displayNode(a, 1);
+        System.out.println(countList(a));
     }
     
 }
