@@ -5,6 +5,7 @@ public class implementationLL {
         Node next;
         Node(int data){
             this.data = data;
+            this.next = null;
         }
     }
     Node head = null; //Initializing Head with null
@@ -33,19 +34,84 @@ public class implementationLL {
                 tail.next = temp;
                 tail = temp;
             }
+            // System.out.println();
         }
-        void display(){
-            while (head != null) {
-                System.out.print(head.data + " ");
-                head = head.next;
+        // int size(){
+        //     Node temp = head;
+        //     int count = 0;
+        //     while(temp != null){
+        //         count++;
+        //         temp = temp.next;
+        //     }
+        //     return count;
+        // }
+        void insertAtBeg(int data){
+            Node temp = new Node(data);
+           if(head == null){
+                head = temp;
+                tail = temp;
+           }
+           else{
+                temp.next = head;
+                head = temp;
+           }
+        //    System.out.println();
+        }
+
+        void insertAt(int data, int postion){
+            Node t = new Node(data);
+            Node temp = head;
+            if(postion < 0){
+                System.out.println("Invelid Position");
+                return;
             }
+            if(postion == 0){
+                insertAtBeg(data);
+                return;
+            }
+            for(int i = 0; i < postion-1; i++){
+                temp = temp.next;
+            }
+            t.next = temp.next;
+            temp.next = t;
+        }
+
+        // Display the Node
+        void display(){
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.println();
         }
     }
+
+    
     public static void main(String[] args) {
         linkedList ll = new linkedList();
         ll.insertAtEnd(2);
+        // ll.display();
+        // System.out.println();
         ll.insertAtEnd(3);
+        // ll.display();
         ll.insertAtEnd(4);
+        // ll.display();
+        // System.out.println();
+        // System.out.print(ll.size());
+        // System.out.println();
+        ll.insertAtEnd(23);
+        // ll.display();
+        ll.insertAtBeg(32);
+        ll.insertAtBeg(12);
+        ll.insertAtBeg(13);
+        ll.insertAtBeg(25);
+        ll.insertAt(33, 2);
+        ll.insertAt(100, 0);
+        ll.insertAt(222, -1); // It will return 
         ll.display();
+        
+        // System.out.println();
+        // System.out.println(ll.tail.data);
     }
 }
