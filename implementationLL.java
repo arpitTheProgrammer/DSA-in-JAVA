@@ -1,5 +1,6 @@
 // package linkedList;
 public class implementationLL {
+
     public static class Node{
         int data ;
         Node next;
@@ -21,10 +22,10 @@ public class implementationLL {
             temp.next = newNode; // adding Node at the end
         }
     }
-
     public static class linkedList {            
         Node head = null;
         Node tail = null;
+        int size = 0;
         void insertAtEnd(int data){
             Node temp = new Node(data);
             if(head == null){
@@ -35,6 +36,7 @@ public class implementationLL {
                 tail = temp;
             }
             // System.out.println();
+            size++;
         }
         // int size(){
         //     Node temp = head;
@@ -56,6 +58,7 @@ public class implementationLL {
                 head = temp;
            }
         //    System.out.println();
+        size++;
         }
 
         void insertAt(int data, int postion){
@@ -74,8 +77,31 @@ public class implementationLL {
             }
             t.next = temp.next;
             temp.next = t;
+            size++;
         }
 
+
+        int getElement(int idx){
+            Node temp = head;
+            for(int i = 0; i < idx-1; i++){
+                temp = temp.next;
+            }
+            System.out.println(temp.data);
+            return temp.data;
+        }
+        int size(){
+            return size;
+        }
+
+
+        // Delete elment from Linked List
+        void deleteElement(int idx){
+            Node temp = head;
+            for(int i = 0; i < idx-1; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+        }
         // Display the Node
         void display(){
             Node temp = head;
@@ -110,7 +136,10 @@ public class implementationLL {
         ll.insertAt(100, 0);
         ll.insertAt(222, -1); // It will return 
         ll.display();
-        
+        ll.getElement(2);
+        System.out.println(ll.size);
+        ll.deleteElement(0);
+        ll.display();
         // System.out.println();
         // System.out.println(ll.tail.data);
     }
