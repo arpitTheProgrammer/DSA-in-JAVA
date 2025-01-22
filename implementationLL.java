@@ -97,6 +97,9 @@ public class implementationLL {
         // Delete elment from Linked List
         void deleteElement(int idx){
             Node temp = head;
+            if(idx == 0){
+                head = head.next;
+            }
             for(int i = 0; i < idx-1; i++){
                 temp = temp.next;
             }
