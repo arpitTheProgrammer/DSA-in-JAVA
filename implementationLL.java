@@ -105,6 +105,22 @@ public class implementationLL {
             }
             temp.next = temp.next.next;
         }
+
+        // Insert element at end
+
+        void insertNodeAtTail(int data){
+            Node newNode = new Node(data);
+            if (head == null) {
+                head = newNode;
+                return;
+            }
+            Node temp = head;
+            while(temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+
         // Display the Node
         void display(){
             Node temp = head;
@@ -141,7 +157,8 @@ public class implementationLL {
         ll.display();
         ll.getElement(2);
         System.out.println(ll.size);
-        ll.deleteElement(0);
+        // ll.deleteElement(0);
+        ll.insertNodeAtTail(44);
         ll.display();
         // System.out.println();
         // System.out.println(ll.tail.data);
