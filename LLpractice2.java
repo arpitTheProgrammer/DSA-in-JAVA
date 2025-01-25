@@ -1,6 +1,7 @@
 import java.util.*;
 public class LLpractice2 {
-    static class Node {
+
+    static static class Node {
         String data;;
         Node next;
         Node(String data){
@@ -8,6 +9,9 @@ public class LLpractice2 {
          this.next = null;   
         }
     }
+
+
+
 
     
     public static void main(String[] args) {
