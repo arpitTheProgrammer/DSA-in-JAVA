@@ -66,5 +66,6 @@ public class opps {
         s.setRollNo(30); // this will change the ROll No by the setter
         System.out.println(s.getRollNo());
         
-    } 
+        // Students st = new Students("Arpit", 32, 67.3);
+    }   
 }
