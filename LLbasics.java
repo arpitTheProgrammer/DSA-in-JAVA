@@ -6,7 +6,7 @@ public class LLbasics {
             this.data = data;
         }
     }
-    
+        Node head= null;
 
         // Print Recursively
         // public static void displayNode(Node head, int count){
@@ -29,14 +29,13 @@ public class LLbasics {
         }
 
 
-
-        // public static void displayNode(Node head){
-        //     Node temp = head;
-        //     while(temp != null){
-        //         System.out.print(temp.data + " ");
-        //         temp = temp.next;
-        //     }
-        // }
+        public static void displayNode(Node head){
+            Node temp = head;
+            while(temp != null){
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
     public static void main(String[] args) {
         Node a = new Node(34);
         Node b = new Node(21);
@@ -48,6 +47,8 @@ public class LLbasics {
         c.next = d;
         d.next = e;
         Node temp  = a;
+
+        
         // Print all Node 
 
         //Print in for Loops

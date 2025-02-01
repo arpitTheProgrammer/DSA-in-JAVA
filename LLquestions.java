@@ -66,10 +66,22 @@ public class LLquestions {
         }   
         temp.next = temp.next.next;
     }
+    void reverse(){
+        Node temp = head;
+        Node prev = null;
+        Node next = null;
+        while(temp != null){
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        head = prev;
+    }
     void display() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.println(temp.data + " ");
             temp = temp.next;
         }
         System.out.println(); // Move to the next line after displaying the list
@@ -81,14 +93,15 @@ public class LLquestions {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.add(53);
-        ll.add(5    );
+        ll.add(5);
         ll.add(512);
         ll.add(76);
         ll.insertAtEnd(12);
         ll.insertAtEnd(16);
         ll.insertAtEnd(15);
-        ll.reverseList();
-        ll.delete(0);
+        // ll.reverseList();
+        // ll.delete(0);
+        ll.reverse();
         ll.display();
     }
     
