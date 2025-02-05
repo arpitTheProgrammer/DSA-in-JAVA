@@ -50,6 +50,19 @@ public class doublyLL {
         
     }
 
+    public static int findFromTail(Node tail, int idx){
+        //Get last element
+        Node temp = tail;
+        while(tail.next != null){
+            tail = tail.next;
+        }
+
+        for(int i = 1; i<idx; i++){
+            temp.next = temp;
+        }
+        return temp.data;
+    }
+
     public static void display(Node head){
         Node temp = head;
         while(temp != null){
@@ -107,6 +120,8 @@ public static void main(String[] args) {
     display(a);
     insertAtIDX(a, 55, 2);
     display(a);
+    Node result1 = findFromTail(a, 2);
+    System.out.println(result1);
 }
     
 }
