@@ -21,9 +21,10 @@ public class HackerRank {
         while(temp.next != null){
             temp = temp.next;
         }
-        for(int i = 1; i < idx; i++){
+        for(int i = 0; i < idx-1; i++){
             temp = temp.prev;
         }
+
         return temp.data;
     }
 
@@ -69,10 +70,13 @@ public class HackerRank {
     c.next = d;
     // d.prev = c;
     d.next = e;
-    // e.prev = d;
+    e.prev = d;
     e.next = null;
     display(a);
+    // System.out.println(findFromTail(a, 2));
     System.out.println(findFromTail(a, 2));
+    
+
 }
     
 

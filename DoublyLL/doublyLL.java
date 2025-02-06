@@ -1,4 +1,3 @@
-package DoublyLL;
 
 import java.util.LinkedList;
 
@@ -63,6 +62,15 @@ public class doublyLL {
         return temp.data;
     }
 
+    // Delete Elment at idx
+
+    public static void deleteElement(Node head, int idx){
+        Node temp = head;
+        for(int i = 0; i < idx-1; i++){
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+    }
     public static void display(Node head){
         Node temp = head;
         while(temp != null){
@@ -120,8 +128,10 @@ public static void main(String[] args) {
     display(a);
     insertAtIDX(a, 55, 2);
     display(a);
-    Node result1 = findFromTail(a, 2);
-    System.out.println(result1);
+    deleteElement(a, 2);
+    display(a);
+    // Node result1 = findFromTail(a, 2);
+    // System.out.println(result1);
 }
     
 }
