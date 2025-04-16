@@ -2,8 +2,9 @@ import java.util.Stack;
 
 public class infix1 {
     static int precedance(char op){
-        if(op == '+' || op == '-') return 1;
-        if(op == '*' || op == '/') return 2;
+		if(op == '(' || op == ')') return 1;
+        if(op == '+' || op == '-') return 2;
+        if(op == '*' || op == '/') return 3;
         return 0;
     }
     static int apply(int a, int b, char op){
