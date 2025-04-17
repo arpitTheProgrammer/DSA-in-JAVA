@@ -1,6 +1,12 @@
 import java.util.Stack;
 
 public class postfixToInfix {
+    static int precedance(char op){
+        if(op == '(' || op == ')') return 1;
+        if(op == '+' || op == '-') return 2;
+        if(op == '*' || op == '/') return 3;
+        return 0;
+    }
     public static void main(String[] args) {
         String str = "953+4*6/-";
         Stack<Integer> val = new Stack<>();
