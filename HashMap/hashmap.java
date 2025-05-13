@@ -38,5 +38,8 @@ public class hashmap{
         map.remove("China");
         System.out.println(map);
 
+        if(map.containsKey("India")) System.out.println(true);
+        else System.out.println(false);
+
     }
 }
