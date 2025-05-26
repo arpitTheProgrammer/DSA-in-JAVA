@@ -4,7 +4,7 @@ public class distinctPair {
     public static int distPairNumber(int arr[]){
         HashSet<Integer> mp1 = new HashSet<>();
         int pair = 0;
-        for(int i = 0; i < arr.length; i++){
+        for(int i : arr){
             int num = arr[i];
             if(mp1.contains(num)){
                 pair++;
